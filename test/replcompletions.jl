@@ -1,5 +1,4 @@
-using REPLCompletions
-using Base.Test
+using Base.REPLCompletions
 
 module CompletionFoo
     module CompletionFoo2
