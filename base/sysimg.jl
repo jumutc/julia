@@ -188,7 +188,7 @@ include("Terminals.jl")
 include("Readline.jl")
 include("REPLCompletions.jl")
 include("REPL.jl")
-include("repl.jl")
+include("replutil.jl")
 include("client.jl")
 
 # sparse matrices and linear algebra
