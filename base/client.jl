@@ -323,7 +323,6 @@ function _start()
     try
         any(a->(a=="--worker"), ARGS) || init_head_sched()
         init_load_path()
-        ccall(:jl_install_sigint_handler, Void, ())
         (quiet,repl,startup,color_set,history) = process_options(copy(ARGS))
         global _use_history = history
 
@@ -359,6 +358,7 @@ function _start()
                 quit()
             end
             quiet || REPL.banner(term,term)
+            ccall(:jl_install_sigint_handler, Void, ())
             REPL.run_repl(term)
         end
     catch err
